@@ -3,9 +3,11 @@
     <hr class="text-light">
 
     <div class="list-group list-reset">
-        <button class="list-group-item list-group-item-action">
-                Prueba
-        </button>
+        @for (item of getTagHistory(); track $index) {
+            <button class="list-group-item list-group-item-action">
+                {{item}}
+             </button>
+        }
     </div>
 
 </div>

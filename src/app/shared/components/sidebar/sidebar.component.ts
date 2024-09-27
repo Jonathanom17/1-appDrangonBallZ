@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GitsService } from '../../../gits/services/gits.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -8,5 +9,13 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+
+  constructor(private gitServices:GitsService){
+
+  }
+  
+  public getTagHistory():string[]{
+    return this.gitServices.getTagHistory;
+  }
 
 }
