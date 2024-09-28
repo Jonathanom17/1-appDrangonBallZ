@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import { GitsService } from '../../../gits/services/gits.service';
 
+import { UpperCasePipe } from '@angular/common';
+
 @Component({
   selector: 'shared-sidebar',
   standalone: true,
-  imports: [],
+  imports: [
+    UpperCasePipe
+  ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

@@ -1,41 +1,36 @@
-import { Component } from '@angular/core';
-interface Card{
-  img:string;
-  text:string;
-}
+import { Component, OnInit } from '@angular/core';
+import {   Item } from '../interfaces/drangonball';
+import { GitsService } from '../../services/gits.service';
+import { JsonPipe } from '@angular/common';
+
+
 
 @Component({
   selector: 'gits-cardgit',
   standalone: true,
-  imports: [],
+  imports: [
+    JsonPipe
+  ],
   templateUrl: './cardgit.component.html',
   styleUrl: './cardgit.component.css'
 })
 
 
-export class CardgitComponent {
-  arrayCard:Card[]=[
-    {
-      img:"https://storage.googleapis.com/pod_public/1300/215167.jpg",
-      text:"Son Goku es el protagonista principal del manga y anime de Dragon Ball"
-    },
-    {
-      img:"https://storage.googleapis.com/pod_public/750/123536.jpg",
-      text:"Gohan es es hijo de GoKu del  anime de Dragon Ball"
-    },{
-      img:"https://storage.googleapis.com/pod_public/1300/215167.jpg",
-      text:"Son Goku es el protagonista principal del manga y anime de Dragon Ball"
-    },
-    {
-      img:"https://storage.googleapis.com/pod_public/750/123536.jpg",
-      text:"Gohan es es hijo de GoKu del  anime de Dragon Ball"
-    },{
-      img:"https://storage.googleapis.com/pod_public/1300/215167.jpg",
-      text:"Son Goku es el protagonista principal del manga y anime de Dragon Ball"
-    },
-    {
-      img:"https://storage.googleapis.com/pod_public/750/123536.jpg",
-      text:"Gohan es es hijo de GoKu del  anime de Dragon Ball"
-    }
-  ]
+export class CardgitComponent implements OnInit {
+  arrayCharacter:Item[]=[]
+
+  constructor(private gitsServices:GitsService){
+
+  }
+  ngOnInit(): void {
+    this.gitsServices.getAllCharacters.subscribe(character=>{
+      this.arrayCharacter=character.items;  
+    })
+  }
+  get AllCharacterDrangonBall(): Item[]{
+    console.table(this.arrayCharacter)
+    return this.arrayCharacter;
+  }
+
+  
 }
