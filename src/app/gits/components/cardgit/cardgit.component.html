@@ -1,28 +1,26 @@
 
 <div class="flex-row">
     <div class="d-flex flex-wrap">
-        @for (item of arrayCharacter; track $index) {
+        @for (item of AllCharacterDrangonBall ; track $index) {
             <article class="card" 
-            style="opacity: 1; transform: none; transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1), transform 333ms cubic-bezier(0.4, 0, 0.2, 1);">
+            >
             <div class="card-container-image">
                 <img class="card-image" 
-                src="{{item.image}}" 
-                alt="Goku">
+                [ngSrc]="item.image" 
+                width="400" height="200" priority
+                >
             </div>
-                <div class="flex-row ">
+                <div class="flex-row container-text ">
                     <div class="d-flex flex-wrap ">
+                      
                         <h2 class="text-title container-title title">{{item.name}} </h2>
                         <h3 class="text-title container-title subtitle">{{item.race}}</h3>
                     </div>
+                    <div class="d-flex flex-wrap ">
+                      <button type="button" class="btn-botones">Detalles</button>
+                      <button type="button" class="btn-botones">Transformación</button>
+                    </div>
                
-                    <div class="d-flex">
-                        <h2 class="text-title title">Base Kit </h2>
-                        <h3 class="text-title subtitle">{{item.ki}}</h3>
-                    </div>
-                    <div class="d-flex">
-                        <h2 class="text-title title">Total Kit </h2>
-                        <h3 class="text-title subtitle">{{item.maxKi}}</h3>
-                    </div>
                    
                 </div>
             </article>
@@ -31,4 +29,5 @@
     </div>
 
 </div>
+
 

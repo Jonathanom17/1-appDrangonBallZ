@@ -8,21 +8,33 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class GitsService {
-  private _tagHistory:string[]=['Gokú','Gohan','Vegueta'];
+  arrayCharacter:Item[]= [];
 
   constructor() { }
 
   private http= inject(HttpClient);
-  private baseURl:string= "https://dragonball-api.com/api/characters";
+  private baseURl:string= "https://dragonball-api.com/api/characters?page=";
+  
+  peticionApiDrangoBallZ(page:number):Observable<DragonBall>{
 
-  get getAllCharacters():Observable<DragonBall>{
-    return  this.http.get<DragonBall>(`${this.baseURl}`)
+    return  this.http.get<DragonBall>(`${this.baseURl}${page}&limit=10`)
   }
   
-  get getTagHistory():string []{
-      return [...this._tagHistory]
+   llenarArray():void{
+    for(let i=1;i<7;i++){
+      this.peticionApiDrangoBallZ(i).
+      subscribe(character=>{ 
+            character.items.flatMap(jug=>{
+              this.arrayCharacter.push(jug);
+          })
+          
+      })
+       
+    }
   }
-  public searchTag(tag:string):void{
-     this._tagHistory.unshift(tag);
+  get getAllCharacter(){
+    this.arrayCharacter.sort((a, b) => {return a.id - b.id});
+    return [...this.arrayCharacter];
   }
+  
 }

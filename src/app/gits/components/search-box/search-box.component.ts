@@ -17,7 +17,7 @@ export class SearchBoxComponent {
   }
   searchTag(){
     const newTag:string= this.tagInput.nativeElement.value;
-    this.gitServices.searchTag(newTag);
+  
     this.tagInput.nativeElement.value="";
     
   }

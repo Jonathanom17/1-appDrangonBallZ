@@ -1,6 +1,6 @@
 export interface DragonBall {
     items: Item[];
-    meta:  Meta;
+    paginacion:  Meta;
     links: Links;
 }
 

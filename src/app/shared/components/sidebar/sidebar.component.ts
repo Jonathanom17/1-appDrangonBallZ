@@ -17,9 +17,10 @@ export class SidebarComponent {
   constructor(private gitServices:GitsService){
 
   }
-  
+  arraydatos:string[]=[];
   public getTagHistory():string[]{
-    return this.gitServices.getTagHistory;
+    
+    return this.arraydatos;
   }
 
 }
