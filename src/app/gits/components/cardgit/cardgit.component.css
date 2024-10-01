@@ -18,8 +18,8 @@ img {
     background: rgb(60, 62, 68);
     border-radius: 0.5rem;
     border:none;
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+   
+    
 }
 
 
@@ -35,7 +35,6 @@ img {
     min-height: 350px;
     max-height: 350px;
     border-style: none;
-    
 
 }
 .card-container-image img {
@@ -101,6 +100,6 @@ img {
   text-decoration: none;
   border: 1px solid rgb(251, 192, 45);
   box-shadow: 2px 1px 10px 1px rgba(251, 192, 45);
-    
+  cursor: pointer;
 
 }
