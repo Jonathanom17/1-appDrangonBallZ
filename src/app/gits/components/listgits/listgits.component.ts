@@ -13,5 +13,5 @@ import { CardgitComponent } from "../cardgit/cardgit.component";
   styleUrl: './listgits.component.css'
 })
 export class ListgitsComponent {
-  
+   isValorPadre!:boolean;
 }

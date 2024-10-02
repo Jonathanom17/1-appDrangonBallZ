@@ -1,10 +1,12 @@
 import { DragonBall, Item, Meta } from './../interfaces/drangonball';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {    } from '../interfaces/drangonball';
 import { GitsService } from '../../services/gits.service';
 import { NgOptimizedImage } from '@angular/common';
-import { catchError, of, tap } from 'rxjs';
+
+import { DetailCharacter } from '../interfaces/detailsCharacter-interface';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -14,19 +16,21 @@ import { catchError, of, tap } from 'rxjs';
   selector: 'gits-cardgit',
   standalone: true,
   imports: [
-    NgOptimizedImage 
+    NgOptimizedImage, RouterLink
   ],
   templateUrl: './cardgit.component.html',
   styleUrl: './cardgit.component.css'
 })
 
 
-export class CardgitComponent  {
- 
-
-
+export class CardgitComponent  implements OnInit {
+  
+  
   constructor(private gitsServices:GitsService,  ){
-    gitsServices.llenarArray();
+    
+  }
+  ngOnInit(): void {
+    this.gitsServices.llenarArray();
   }
  
 
@@ -37,5 +41,6 @@ export class CardgitComponent  {
     return this.gitsServices.getAllCharacter;
   }
 
+  
   
 }

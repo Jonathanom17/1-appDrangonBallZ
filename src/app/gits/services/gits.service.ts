@@ -3,13 +3,34 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { DragonBall } from '../components/interfaces/drangonball';
 import { Observable, of } from 'rxjs';
+import { DetailCharacter } from '../components/interfaces/detailsCharacter-interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GitsService {
   arrayCharacter:Item[]= [];
-
+  arrayDetail:DetailCharacter={
+    id: 0,
+    name: '',
+    ki: '',
+    maxKi: '',
+    race: '',
+    gender: '',
+    description: '',
+    image: '',
+    affiliation: '',
+    deletedAt: null,
+    originPlanet: {
+      id: 0,
+      name: '',
+      isDestroyed: false,
+      description: '',
+      image: '',
+      deletedAt: null
+    },
+    transformations: []
+  };
   constructor() { }
 
   private http= inject(HttpClient);
@@ -21,6 +42,7 @@ export class GitsService {
   }
   
    llenarArray():void{
+    this.arrayCharacter=[];
     for(let i=1;i<7;i++){
       this.peticionApiDrangoBallZ(i).
       subscribe(character=>{ 
@@ -32,9 +54,27 @@ export class GitsService {
        
     }
   }
-  get getAllCharacter(){
+
+  get getAllCharacter():Item[]{
     this.arrayCharacter.sort((a, b) => {return a.id - b.id});
     return [...this.arrayCharacter];
   }
+
+  getDetail(id:number): DetailCharacter {
+   
+    this.peticionDetailCharacter(id)
+    .subscribe(detail=>{
+        this.arrayDetail=detail;
+    });
+    return this.arrayDetail;
+  }
+
+
+
+  peticionDetailCharacter(id:number): Observable<DetailCharacter>{
+   
+    return  this.http.get<DetailCharacter>(`https://dragonball-api.com/api/characters/${id}`)
+  }
+  
   
 }
