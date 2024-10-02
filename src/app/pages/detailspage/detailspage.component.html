@@ -1,50 +1,48 @@
-<p>detailspage works! {{id}}</p>
+<div class="container text-center m-2">
+  <div class="row justify-content-md-center">
+    <!-- IMAGEN ****************************-->
+    <div class="col-sm">
+      <h5 class="card-title">
+        <strong>{{detailCharacter().name}}</strong>
+      </h5>
+      <img class="img-character img-fluid rounded-start img-character"  priority [ngSrc]="detailCharacter().image">
+      <h5 class="card-title">
+        <strong>ki </strong>{{detailCharacter().ki}}      
+      </h5>
+      <h5 class="card-title">
+        <strong>Máximo ki </strong>{{detailCharacter().maxKi}}
+      </h5>
+    </div>
 
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-       
+    <div class="col-sm">
+      <h5 class="">
+        <strong>Raza: {{detailCharacter().race}}</strong>
+      </h5>
+      <p class="text-start lh-base">
+        <strong>Descripcion</strong>:
+        {{detailCharacter().description}}</p>
+    </div>
 
-        <img class="img-fluid rounded-start" 
-          width="800" height="400" priority
-                [ngSrc]="detailCharacter().image" 
-                
-                >
-      </div>
-      <div class="col-md-8">
+
+    <div class="col-sm">
+      <img src="{{detailCharacter().originPlanet.image}}"
+        width="50" height="300" 
+          class="card-img-top" alt="..."
+          >
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-        </div>
-        <div class="col-md-6">
-         
-  
-          <img class="img-fluid rounded-start" 
-            width="800" height="400" priority
-                  [ngSrc]="detailCharacter().originPlanet.image" 
-                  
-                  >
-        </div>
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-        </div>
-        <div class="col-md-6">
-         
-  
-          <img class="img-fluid rounded-start" 
-            width="800" height="400" priority
-                  [ngSrc]="detailCharacter().originPlanet.image" 
-                  
-                  >
-        </div>
-      </div>
-      
-
+          <h5 class="card-title">
+            <strong>{{detailCharacter().originPlanet.name}}</strong>
+          </h5>
+          <p class="text-start lh-base">
+            <strong>Descripcion</strong>:
+            {{detailCharacter().originPlanet.description}}</p>
+    </div>
   </div>
 
-    {{detailCharacter().id }}
+</div>
+
+
+
+
+
+{{detailCharacter().id }}

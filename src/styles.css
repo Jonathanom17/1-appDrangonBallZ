@@ -2,14 +2,9 @@
 
 html, body {height: 100%;}
 
+
+
 body{
     height: fit-content;
-    margin: 0;
-    font-family: 'fontDBZ';
-}
-@font-face {
-    font-family: 'fontDBZ';
-    src: url('assets/fonts/fontDBZ/Saiyan-Sans.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    
 }
