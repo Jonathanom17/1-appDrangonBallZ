@@ -1,1 +1,30 @@
-<p>transformationspage works!</p>
+
+<div class="container text-center m-2">
+    <div class="row justify-content-md-center">
+      <!-- IMAGEN ****************************-->
+
+      @if (arraytransformations.length!=0) {
+        @for (item of arraytransformations; track $index) {
+        
+            <div class="col-sm">
+                <h5 class="card-title">
+                  <strong>{{item.name}}</strong>
+                </h5>
+                <img class="img-fluid rounded-start img-character" src="{{item.image}}" priority>
+                <h5 class="card-title">
+                    <strong>KI: {{item.ki}}</strong>
+                  </h5>
+               
+              </div>
+    
+    
+              
+          }
+        }@else {
+            <h1 class="m5"> El Personaje no tiene Transformaciones</h1>
+        }
+    
+
+    </div>
+</div>
+

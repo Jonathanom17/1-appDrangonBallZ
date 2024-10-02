@@ -4,9 +4,29 @@
     }
 }
 
-img {
+.Saiyan {
     border-style: none;
-    filter: drop-shadow(4px -50px 12px rgba(251, 192, 45))
+    filter: drop-shadow(4px -50px 12px rgba(246, 223, 6))
+}
+
+.FriezaRace {
+    border-style: none;
+    filter: drop-shadow(3px -20px 8px rgba(129, 78, 168))
+}
+
+.Namekian{
+    border-style: none;
+    filter: drop-shadow(3px -20px 8px rgba(236, 125, 41))
+}
+
+.Android {
+    border-style: none;
+    filter: drop-shadow(3px -20px 8px rgba(41, 79, 236))
+}
+
+.God {
+    border-style: none;
+    filter: drop-shadow(4px -50px 12px rgba(19, 253, 2))
 }
 
 .card {

@@ -7,7 +7,7 @@ import { JsonPipe, NgOptimizedImage } from '@angular/common';
   selector: 'app-detailspage',
   standalone: true,
   imports: [
-    JsonPipe, NgOptimizedImage
+    NgOptimizedImage
   ],
   templateUrl: './detailspage.component.html',
   styleUrl: './detailspage.component.css'

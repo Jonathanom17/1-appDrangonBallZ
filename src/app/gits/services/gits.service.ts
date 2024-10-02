@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { DragonBall } from '../components/interfaces/drangonball';
 import { Observable, of } from 'rxjs';
-import { DetailCharacter } from '../components/interfaces/detailsCharacter-interface';
+import { DetailCharacter, Transformations } from '../components/interfaces/detailsCharacter-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,8 @@ export class GitsService {
     },
     transformations: []
   };
+  arraytransformations: Transformations[]=[];
+
   constructor() { }
 
   private http= inject(HttpClient);
@@ -55,9 +57,24 @@ export class GitsService {
     }
   }
 
+ 
   get getAllCharacter():Item[]{
     this.arrayCharacter.sort((a, b) => {return a.id - b.id});
     return [...this.arrayCharacter];
+  }
+
+  getArrayTranformation():void{
+    this.arraytransformations=[];
+    for(let i=1;i<7;i++){
+      this.peticionDetailCharacter(i).
+      subscribe(character=>{ 
+            character.transformations.flatMap(tranformation=>{
+              this.arrayCharacter.push(tranformation);
+          })
+          
+      })
+       
+    }
   }
 
   getDetail(id:number): DetailCharacter {

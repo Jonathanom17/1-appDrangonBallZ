@@ -3,7 +3,7 @@ import { DragonBall, Item, Meta } from './../interfaces/drangonball';
 import { Component, Input, OnInit } from '@angular/core';
 import {    } from '../interfaces/drangonball';
 import { GitsService } from '../../services/gits.service';
-import { NgOptimizedImage } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 
 import { DetailCharacter } from '../interfaces/detailsCharacter-interface';
 import { RouterLink } from '@angular/router';
@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
   selector: 'gits-cardgit',
   standalone: true,
   imports: [
-    NgOptimizedImage, RouterLink
+    NgOptimizedImage, RouterLink,NgClass
   ],
   templateUrl: './cardgit.component.html',
   styleUrl: './cardgit.component.css'
@@ -25,7 +25,7 @@ import { RouterLink } from '@angular/router';
 
 export class CardgitComponent  implements OnInit {
   
-  
+  valuecss:string="img-shadow-Saiyan";
   constructor(private gitsServices:GitsService,  ){
     
   }
