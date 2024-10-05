@@ -1,10 +1,10 @@
 
-<div class="flex-row">
-    <div class="d-flex flex-wrap">
+<div class="flex-row card-fondo">
+    <div class="d-flex flex-wrap card-fondo">
         @for (item of AllCharacterDrangonBall ; track $index) {
-            <article class="card" 
+            <article class="card " 
             >
-            <div class="card-container-image">
+            <div class="card-container-image ">
                 <img ngClass="card-image  {{item.race.replace(' ', '')}}" 
                 [ngSrc]="item.image" 
                 width="200" height="380" priority
@@ -17,9 +17,9 @@
                         <h3 class="text-title container-title subtitle">{{item.race}}</h3>
                     </div>
                     <div class="d-flex flex-wrap ">
-                      <button type="button" class="btn-botones" routerLink="/detail/{{item.id}}" >Detalles</button>
-                      <button type="button" class="btn-botones" routerLink="/tranformation/{{item.id}}" >Transformación</button>
-                     
+                        <button type="button" class="btn-botones" routerLink="/detail/{{item.id}}" >Detalles</button>
+                        <button type="button" class="btn-botones" routerLink="/tranformation/{{item.id}}" >Transformación</button>
+                       
                     </div>
                     
                    

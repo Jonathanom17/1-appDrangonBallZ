@@ -25,7 +25,7 @@ import { RouterLink } from '@angular/router';
 
 export class CardgitComponent  implements OnInit {
   
-  valuecss:string="img-shadow-Saiyan";
+  valuecss:string="";
   constructor(private gitsServices:GitsService,  ){
     
   }
@@ -37,6 +37,8 @@ export class CardgitComponent  implements OnInit {
 
 
   get AllCharacterDrangonBall(): Item[]{
+
+    
      
     return this.gitsServices.getAllCharacter;
   }

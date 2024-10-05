@@ -13,7 +13,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class ToolbarComponent {
   itemsMenu:Menu[]=[
     {component:'home',title:'Home', },
-    {component:'/planet',title:'Planetas' },
+    
   ]
 }
 

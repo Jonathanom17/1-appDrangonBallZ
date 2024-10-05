@@ -4,29 +4,41 @@
     }
 }
 
+
+
 .Saiyan {
+  
     border-style: none;
-    filter: drop-shadow(4px -50px 12px rgba(246, 223, 6))
+    filter: drop-shadow(20px -60px 30px rgba(246, 223, 6))  ;
+    z-index: -1;
+}
+
+
+.Angel, .Nucleicobenigno, .Nucleico {
+  
+    border-style: none;
+    filter: drop-shadow(20px -60px 30px rgba(234, 89, 62))  ;
+    z-index: -1;
 }
 
 .FriezaRace {
     border-style: none;
-    filter: drop-shadow(3px -20px 8px rgba(129, 78, 168))
+    filter: drop-shadow(20px -60px 30px rgba(129, 78, 168))
 }
 
 .Namekian{
     border-style: none;
-    filter: drop-shadow(3px -20px 8px rgba(236, 125, 41))
+    filter: drop-shadow(20px -60px 30px rgba(236, 125, 41))
 }
 
 .Android {
     border-style: none;
-    filter: drop-shadow(3px -20px 8px rgba(41, 79, 236))
+    filter: drop-shadow(20px -60px 30px rgba(41, 79, 236))
 }
 
 .God {
     border-style: none;
-    filter: drop-shadow(4px -50px 12px rgba(19, 253, 2))
+    filter: drop-shadow(20px -60px 30px rgba(19, 253, 2))
 }
 
 .card {
@@ -43,7 +55,11 @@
 }
 
 
-
+.card-fondo {
+    border: 0;
+    border-color: transparent;
+    background-color: transparent;
+}
 
 
 .card-container-image {
@@ -79,6 +95,35 @@
     z-index: 0;
     transition: transform 0.6s;
 }
+
+
+@keyframes show {
+	from {
+		opacity: 0;
+		scale: 25%;
+	}
+
+	to {
+		opacity: 1;
+		scale: 100%;
+	}
+}
+
+img {
+	view-timeline-name: --image;
+	view-timeline-axis: block;
+
+	animation-timeline: --image;
+	animation-name: show;
+
+	animation-range: entry 25% cover 30%;
+	animation-fill-mode: both;
+    
+}
+
+
+
+
 
 .container-text{
      border-top-left-radius: 0.5rem;

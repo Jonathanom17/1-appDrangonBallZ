@@ -9,6 +9,7 @@ import { DetailCharacter, Transformations } from '../components/interfaces/detai
   providedIn: 'root'
 })
 export class GitsService {
+  typeRace:string="";
   arrayCharacter:Item[]= [];
   arrayDetail:DetailCharacter={
     id: 0,
@@ -57,6 +58,7 @@ export class GitsService {
     }
   }
 
+  
  
   get getAllCharacter():Item[]{
     this.arrayCharacter.sort((a, b) => {return a.id - b.id});
